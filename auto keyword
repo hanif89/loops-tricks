@@ -1,0 +1,76 @@
+#include <vector>
+#include<bits/stdc++.h>
+
+using namespace std;
+
+const int N=1e5+10;
+
+int main() {
+
+ // vector declare
+ vector <int> v={1,2,3,4,5};
+ for(int i=0;i<v.size();++i)
+ {
+       cout<<v[i]<<" ";
+ }
+ cout<<endl;
+ //Ranged based loop for vector
+ for(int element: v){
+      cout<<element<<" ";
+ }
+ cout<<endl;
+ //Ranged based loop for vector
+ for(int &element: v){
+           // element++;
+      cout<<element<<" ";
+ }
+ cout<<endl;
+ //if u add reference it will take actual value else it will took copy
+ //In the upper code element is a copy for printing the vector we to add reference sign=&
+ for(int element: v){
+            element++;
+// cout<<element<<" ";
+ }
+ cout<<endl;
+ //map declaring
+ map <int,int> m={{1,2},{2,4},{5,6},{9,10}};
+/* map<int,int> ::iterator it;  //iteration
+ for(it=m.begin();it!=m.end();++it)  {
+      cout<<(it->first)<<" "<<(it->second)<<endl;
+ }  */
+ //ranged based loop for map
+
+ for(pair<const int,int>&pr:m)  //first element of map is constant so we use const
+ {
+       pr.second++;
+      // cout<<pr.first<<" "<<pr.second<<endl;
+ }
+  for(pair<int,int>pr:m)
+ {     //pr.second++;
+       cout<<pr.first<<" "<<pr.second<<endl;
+ }
+     cout<<endl;
+     cout<<endl;
+     cout<<endl;
+
+ //--------------------------------------------------------------------------------------------------------------------------
+ //use of auto keyboard - automatic understood data types
+
+ //vector
+ auto x=1;
+ for(auto i:v){
+      cout<<i<<" ";
+ }
+ cout <<endl;
+ //maps
+ map<int,int> ::iterator it=m.begin();
+ auto it1=m.begin();
+ for(auto pr:m){
+      cout<<pr.first<<" "<<pr.second<<endl;
+ }
+
+
+
+
+return 0;
+}
